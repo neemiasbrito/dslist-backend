@@ -16,28 +16,29 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Long id;
     private String title;
-
     @Column(name = "game_year") // troca no banco de dados o nome year por game_year
     private Integer year;
     private String genre;
     private String platforms;
-    private Double scode;
-    private String imgUrlString;
+    private Double score;
+    private String imgUrl;
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
+    @Column(columnDefinition = "TEXT")
     private String longDescription;
     // METODOS CONSTRUTOR SEM ARGUMENTOS 
     public Game() {
     }
     // METODOS CINSTRUTOR COM ARGUMENTOS
-    public Game(Long id, String title, Integer year, String genre, String platforms, Double scode, String imgUrlString,
+    public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
             String shortDescription, String longDescription) {
         this.id = id; // this .id e outros e referente a da classs game e  = id e do argumentos
         this.title = title;
         this.year = year;
         this.genre = genre;
         this.platforms = platforms;
-        this.scode = scode;
-        this.imgUrlString = imgUrlString;
+        this.score = score;
+        this.imgUrl = imgUrl;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
     }
@@ -72,17 +73,17 @@ public class Game {
     public void setPlatforms(String platforms) {
         this.platforms = platforms;
     }
-    public Double getScode() {
-        return scode;
+    public Double getScore() {
+        return score;
     }
-    public void setScode(Double scode) {
-        this.scode = scode;
+    public void setScore(Double score) {
+        this.score = score;
     }
-    public String getImgUrlString() {
-        return imgUrlString;
+    public String getImgUrl() {
+        return imgUrl;
     }
-    public void setImgUrlString(String imgUrlString) {
-        this.imgUrlString = imgUrlString;
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
     public String getShortDescription() {
         return shortDescription;
