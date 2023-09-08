@@ -1,6 +1,7 @@
 package com.dev.superior.dslist.dto;
 
 import com.dev.superior.dslist.entities.Game;
+import com.dev.superior.dslist.projections.GameMinProjection;
 
 // manda pra o banco de dado so as informações que mas enterreça
 public class GameMinDTO {
@@ -21,6 +22,16 @@ public class GameMinDTO {
         imgUrl = Entity.getImgUrl();
         shortDescription = Entity.getShortDescription();
     }
+
+
+    public GameMinDTO(GameMinProjection projection) {
+        id = projection.getId();
+        title = projection.getTitle();
+        year = projection.getYear();
+        imgUrl = projection.getImgUrl();
+        shortDescription = projection.getShortDescription();
+    }
+
     //métoodos getes
     public Long getId() {
         return id;
